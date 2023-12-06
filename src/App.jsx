@@ -1,4 +1,3 @@
-import { useState } from "react";
 import userData from "./database/user.json";
 import data from "./database/data.json";
 import friends from "./database/friends.json";
