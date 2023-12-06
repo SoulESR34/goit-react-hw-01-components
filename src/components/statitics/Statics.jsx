@@ -1,4 +1,6 @@
 import { StatiticsWrapper, TitleStatics, DataContainer, Data} from "./Statics.style";
+import PropTypes from "prop-types"
+
 const UploadStats = (props) => {
   const docx = props.data[0]
   const pdf = props.data[1]
@@ -33,5 +35,15 @@ const UploadStats = (props) => {
       </StatiticsWrapper>
   );
 };
+
+UploadStats.propTypes = {
+  title: PropTypes.string.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired
+    })
+  ) 
+}
 
 export default UploadStats;

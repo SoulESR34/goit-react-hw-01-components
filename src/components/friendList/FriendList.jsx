@@ -1,4 +1,5 @@
 import { FriendContainer, FriendsList, FriendStatus } from "./FriendList.style";
+import PropTypes from 'prop-types'
 
 const FriendList = (props) => {
   const friends = props.friends;
@@ -15,6 +16,17 @@ const FriendList = (props) => {
       </FriendsList>
     </section>
   );
+};
+
+FriendList.propTypes = {
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default FriendList;
